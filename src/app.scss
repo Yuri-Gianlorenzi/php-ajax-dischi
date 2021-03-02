@@ -1,3 +1,6 @@
-body {
-  background-color: red;
-}
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/commons";
+@import "partials/header";
+@import "partials/main";
+@import "partials/footer";
