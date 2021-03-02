@@ -1,5 +1,6 @@
 <?php
 
+  //qui includiamo il file dove è presente il nostro array, per poter stampare tutti i cd presenti nell'array
   include 'db.php';
 
  ?>
@@ -28,34 +29,41 @@
       </div>
   </header>
 
-  <div class="cds-container container">
-      <!-- Disco ad esempio -->
-      <label for="genre">Scegli il genere</label>
-      <div class="options">
-        <select name="genre" id="genre">
-          <!-- <option value="">All</option> -->
-          <option>ciao</option>
-          <option>ciao</option>
-          <option>ciao</option>
-        </select>
-
-      </div>
-
-      <?php foreach ($discs as $disc) {?>
-
-      <div class="cd">
-        <img src="<?php echo $disc['poster']; ?>" alt="<?php echo $disc['title']; ?>">
-        <h3><?php echo $disc['title']; ?></h3>
-        <span class="author"><?php echo $disc['author']; ?></span>
-        <span class="year"><?php echo $disc['year']; ?></span>
-      </div>
-
-    <?php } ?>
+  <main>
 
 
+    <div class="cds-container container">
+        <!-- Disco ad esempio -->
+        <label for="genre">Scegli il genere</label>
+        <div class="options">
+          <select name="genre" id="genre">
+            <!-- <option value="">All</option> -->
+            <option>ciao</option>
+            <option>ciao</option>
+            <option>ciao</option>
+          </select>
+        </div>
+        <!-- fine del contenitore del filtro -->
+
+        <!-- qui stampiamo a schermo tramite php -->
+        <?php foreach ($discs as $disc) {?>
+
+        <div class="cd">
+          <img src="<?php echo $disc['poster']; ?>" alt="<?php echo $disc['title']; ?>">
+          <h3><?php echo $disc['title']; ?></h3>
+          <span class="author"><?php echo $disc['author']; ?></span>
+          <span class="year"><?php echo $disc['year']; ?></span>
+        </div>
+        <!-- fine contenitore del singolo cd -->
+
+      <?php } ?>
 
 
-  </div>
+
+
+    </div>
+    <!-- fine contenitore dei cd -->
+  </main>
 
 </body>
 </html>

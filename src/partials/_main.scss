@@ -1,0 +1,59 @@
+
+.cds-container {
+  @include flex;
+  @include container;
+  flex-wrap: wrap;
+  padding: 100px 0;
+
+  // formattazione della select con label all'inizio del cds-container
+  .options {
+    margin: 20px 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  label {
+    color: white;
+  }
+
+  //formattazione del box che contiene il singolo cd e le sue info
+  .cd {
+    @include flex (flex-start);
+    flex-direction: column;
+    flex-basis: 200px;
+    padding: 20px;
+    margin: 10px 20px;
+    height: $hCd;
+    background: $bgcBoxCd;
+    text-align: center;
+
+    //formattazione dell'immagine di copertina del singolo cd
+    img {
+      max-width: 100%;
+    }
+
+    //formattazione del titolo del singolo cd
+    h3 {
+      margin: 20px 0;
+      color: $cdTitle;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+
+    //formattazione delle info sull'autore del cd
+    span.author {
+      color: $cdInfo;
+      font-size: 20px;
+    }
+
+    //formattazione delle info sull'anno di uscita del cd
+    span.year {
+      color: $cdInfo;
+    }
+
+  }
+
+
+
+}

@@ -26,3 +26,54 @@ header img {
   height: 50px;
   margin-top: 10px;
 }
+
+.cds-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 100px 0;
+}
+.cds-container .container {
+  width: 1070px;
+  height: 100%;
+  margin: 0 auto;
+}
+.cds-container .options {
+  margin: 20px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cds-container label {
+  color: white;
+}
+.cds-container .cd {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  flex-basis: 200px;
+  padding: 20px;
+  margin: 10px 20px;
+  height: 360px;
+  background: #2e3a46;
+  text-align: center;
+}
+.cds-container .cd img {
+  max-width: 100%;
+}
+.cds-container .cd h3 {
+  margin: 20px 0;
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.cds-container .cd span.author {
+  color: grey;
+  font-size: 20px;
+}
+.cds-container .cd span.year {
+  color: grey;
+}

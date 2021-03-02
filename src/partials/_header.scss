@@ -1,9 +1,9 @@
 @include container;
 
 header {
-  width: 100%;
-  height: 70px;
-  background: rgb(46, 58, 70);
+  width: $wHeader;
+  height: $hHeader;
+  background: $bgcHeader;
 }
 
 header img {
