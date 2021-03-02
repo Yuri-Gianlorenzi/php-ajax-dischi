@@ -1,5 +1,5 @@
 <?php
-
+//qui abbiamo copiato e incollato la risposta alla chiamata di postman del link utilizzato per fare vue-dischi del 09-02-21, l'oggetto viene trasformato in un array php con chiavi custom
 $discs = [
     [
         "poster" => "https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg",
@@ -71,7 +71,9 @@ $discs = [
         "genre" => "Pop",
         "year" => "1987"
     ]
-]
+];
+
+
 
 
 
