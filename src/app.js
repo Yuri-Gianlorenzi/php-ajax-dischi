@@ -11,7 +11,7 @@ let app = new Vue({
 
   mounted() {
       //qui effettuiamo la chiamata al NOSTRO SERVER
-      axios.get('http://localhost/02_marzo/php-ajax-dischi/server.php')
+      axios.get('server.php')
       .then(result => {
         console.log(result.data);
         //con il console vediamo il percorso all'interno dell'api per arrivare ai dati che ci interessano, nel nostro caso, all'interno della key 'data' abbiamo i nostri oggetti(cd)
