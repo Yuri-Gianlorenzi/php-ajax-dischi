@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- link fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+  <!-- link google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Link AXIOS/AJAX -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+  <!-- Link Vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <!-- link foglio di stile -->
+  <link rel="stylesheet" href="dist/app.css">
+  <title>Dischi VUE</title>
+</head>
+<body>
+
+
+  <header>
+      <div class="container">
+          <img src="img/logo.png" alt="logo">
+      </div>
+  </header>
+
+  <main>
+
+
+    <div id="app" class="cds-container container">
+        <!-- Disco ad esempio -->
+        <label for="genre">Scegli il genere</label>
+        <div class="options">
+          <select name="genre" id="genre">
+            <!-- <option value="">All</option> -->
+            <option v-for="tipo in genere" :value="tipo" @click="chooseGenre(tipo)">{{tipo}}</option>
+          </select>
+        </div>
+        <!-- fine del contenitore del filtro -->
+
+
+        <!-- se non è stato filtrato niente (la genreList È VUOTA) verrà stampata films, MENTRE  se l'utente clicca su un genere, la genreList si popola e verrà stampata quella -->
+        <div v-if="genreList == ''" v-for="(film, index) in films"  class="cd">
+          <img :src="film.poster" alt="">
+          <h3>{{film.title}}</h3>
+          <span class="author">{{film.author}}</span>
+          <span class="year">{{film.year}}</span>
+        </div>
+        <!-- fine contenitore del singolo cd -->
+
+
+        <!-- contenitore identico al superiore, ma questo serve per stampare i cd dopo un eventuale filtro per genere -->
+        <div v-if="genreList.length > 0" v-for="(film, index) in genreList"  class="cd">
+            <img :src="film.poster" alt="">
+            <h3>{{film.title}}</h3>
+            <span class="author">{{film.author}}</span>
+            <span class="year">{{film.year}}</span>
+        </div>
+
+
+
+
+    </div>
+    <!-- fine contenitore dei cd -->
+  </main>
+
+  <script src="dist/app.js" charset="utf-8"></script>
+</body>
+</html>
